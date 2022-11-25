@@ -1,32 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { Button, Tag, DatePicker, Radio, Checkbox, theme } from 'antd'
+import 'antd/dist/reset.css'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { token } = theme.useToken()
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div>
+      <Tag color="success">success</Tag>
+      <Tag color="processing">processing</Tag>
+      <Tag color="error">error</Tag>
+      <Tag color="warning">warning</Tag>
+      <Tag color="default">default</Tag>
+
+      <DatePicker />
+
+      <Radio checked>Radio</Radio>
+      <Checkbox checked>Checkbox</Checkbox>
+
+      <div
+        style={{
+          backgroundColor: token.colorPrimary,
+          width: '100px',
+          height: '100px',
+        }}
+      ></div>
     </div>
   )
 }
